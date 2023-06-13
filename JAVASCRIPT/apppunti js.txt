@@ -1,0 +1,19 @@
+JavaScript è un linguaggio prototype based e non ha l obbligo e la necessità di costruire una classe e usare metodi e costruttori.
+ECMAScript 6+ è la versione che viene utilizzata di javascript.
+
+javascript nasce perché l html era statico. non aveva logica di programmazione, l html è un porco che mangia ogni cosa che gli dai.
+Js è la logica che fa funzionare una pagina del web.
+E' un linguaggio leggero che viene attaccato all html. js si inserisce per renderlo dinamico e intercettare gli eventi dell utente. migliora la connessione uomo-macchina.
+è un linguaggio latop client e smazza molto lavoro ai server quindi ai linguaggio backend.
+
+per collegare js all html bisogna caricare lo script. viene posizionato ai tag di chiusra del body?!
+
+
+index.html perché appena un server lo legge sa che pagina del browser lanciare.
+
+html è un linguaggio che funzia per gerarchie.
+
+
+
+
+

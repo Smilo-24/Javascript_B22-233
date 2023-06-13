@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <!-- Lo script nel head a GOOGLE sta sul cazzo. Manda il codice a rilento-->
+    <!-- Google manda un warning. La pagina non si carica e diventa poco sicura-->
+
+</head>
+<body>
+    <h1>Prima pagina con JS</h1>
+<p>Pagina del corso Tecniche di Programmazione</p>
+<p>Studente: Simone</p>
+<p id="numStud"></p>
+
+
+<!-- Qua prima del body inseriesco un tag Script-->
+<!-- Html viene letto dall alto verso il bassso e caricato ogni volta.-->
+<!-- Lo script invece letto dal basso verso l'alto-->
+<script>
+    //Non dichiaro il tipo. var e let sono due variabili
+    //apice o virgolette sono la stessa cosa.
+    let a = "Simone"; //Let è più moderno. 
+    var b = 'Capuano';//Var è più antico
+
+    let eta =25;
+
+    //javascript comunque è tipizzato cioè se lo legge da solo. 
+    //Viene aiutato dal browser il tipo che sia string o number
+    //java vs javascript è la differenza del fortemente tipizzato vs uno debolmente tipizzato
+
+    //metodo log dell oggetto console ed è come il system.out.println
+    console.log("Ciao " + " " + a + " " + b +  ".Ho " + eta + "anni" );
+    
+    //typeof mi dice che tipi sono, in questo caso a è string b è number
+    console.log(typeof a);
+    console.log(typeof eta);
+
+    let anno = 2023;
+    let pi = 3.14;
+
+    //che sia intero o double non cambia niente. sembre number resta
+
+    console.log(typeof anno);
+    console.log(typeof pi);
+
+    let somma = anno + pi;
+    //per farlo in java devo fare il cast 
+    console.log(somma);
+
+    let somma2= a + pi + anno;
+
+    //interpeta e ci da come risultato il nome+3.14+2023
+    console.log(somma2)
+
+    let somma3 = pi + anno + b ;
+    console.log(somma3);
+
+    //queste sono 2 stringhe
+    let num1="10";
+    let num2="20";
+
+    //questo è un cast
+    let somma4= Number (num1)+ Number(num2);
+    console.log(somma4);
+</script>
+
+
+<!-- Script su file esterno -->
+
+<script src="./js/script0.js"></script>
+
+
+</body>
+</html>
