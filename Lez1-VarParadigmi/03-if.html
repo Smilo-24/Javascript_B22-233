@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If</title>
+</head>
+<body>
+    
+
+
+    <script>
+//if(condizione){ corpo }
+
+if(1>0){
+    console.log("il numero 1 è maggiore di zero")
+}
+
+//esempio
+
+let etaUser = 15;
+
+if(etaUser>18){
+    console.log("Mi spiaze non puoi entrare")
+}else{
+    console.log("Benvenuto")
+}
+
+let coloreSemaforo ="verde";
+
+if(coloreSemaforo==="verde"){
+    console.log("puoi passare");
+}else if(coloreSemaforo==="giallo"){
+    console.log("attento, il semaforo sta per scattare")
+}else if(coloreSemaforo==="rosso"){
+    console.log("stop")
+}else{
+    console.log("semaforo fuori uso")
+}
+
+if(coloreSemaforo === "Verde"){ //=== verifica non solo il contenuto ma anche il tipo
+
+}
+
+var numero1=10;
+var numero2="10";
+
+let confronto1=(numero1==numero2) // -> true
+//strettamente uguale ad a
+
+let confronto2 = (numero1===numero2) //-> false
+
+console.log(confronto1,confronto2)
+
+
+//&& AND logico
+// || OR logico
+
+//controllare i valori di un gioco
+
+let skill=10;
+let punteggio=25;
+
+//passo il punteggio se le skill sono oltre 8 e il punteggio oltre 20
+
+console.log("Gioco in HARD MODE!")
+if(skill>8 && punteggio>20){
+    console.log("Bravo hai superato il livello")
+}else if(skill>8 && punteggio <=20){
+    console.log("Sei una schiappa nel punteggio!")
+}else if(skill<=8 && punteggio >20){
+    console.log("Sei una schiappa nelle skill!")
+}else{
+    console.log("Sei una schiappa!")
+}
+
+
+console.log("Gioco in EASY MODE")
+if(skill>8 || punteggio>20){
+    console.log("Bravo hai superato il livello facile");
+    if(skill<=8 && punteggio >20){
+        console.log("Però devi migliorare le skill!")
+    }else{
+        console.log("Però devi migliorare il punteggio")
+    }      
+}else{
+    console.log("Sei una schiappa!")
+}
+
+    </script>
+</body>
+</html>
