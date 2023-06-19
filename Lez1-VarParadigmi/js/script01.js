@@ -32,14 +32,24 @@ let numPartecipanti = document.getElementById("numPartecipanti");
 
 for (let i = 0; i < studenti.length; i++) {
 //Come mai passo voti [i] ? E' per ciclare l'array?
-    if (voti[i] > 18) {
-        //br per andare a capo oppure mb-3 un margin bottom che ci aiuta a separare i nomi
-        // listaStud.innerHTML +="<li class='mb-3'>"+studenti[i]+"</li><br>"
+    // if (voti[i] > 18) {
+    //     //br per andare a capo oppure mb-3 un margin bottom che ci aiuta a separare i nomi
+    //     // listaStud.innerHTML +="<li class='mb-3'>"+studenti[i]+"</li><br>"
 
-        listaStud.innerHTML += "<li>" + studenti[i] +" " + voti[i] + "</li>"
-    } else {       
-        listaStud.innerHTML += "<li class='txtRosso'>" +"Bocciatissimo" + "</li>"
+    //     listaStud.innerHTML += "<li>" + studenti[i] +" " + voti[i] + "</li>"
+    // } else {       
+    //     listaStud.innerHTML += "<li class='txtRosso'>" +"Bocciatissimo" + "</li>"
+    // }
+
+
+    // creo variabile votazione
+let votazione;
+    if(voti[i]<18){
+        votazione="esame non superato"
+    }else{
+        votazione=voti[i]
     }
+    listaStud.innerHTML += "<li>" + studenti[i] +" " + votazione + "</li>"
 }
 
 
@@ -113,5 +123,9 @@ studenti.forEach(
 let numPartecipanti = document.getElementById("numPartecipanti");
 numPartecipanti.innerHTML = numStud;
 */
+
+let media =  somma / studenti.length
+
+mediaVoti.innerHTML="Media Voti esame: " +media.toFixed(2);//toFixed decide quante cifre sono importanti la virgola e gli passi un parametro, 2 -8 etc 
 
 

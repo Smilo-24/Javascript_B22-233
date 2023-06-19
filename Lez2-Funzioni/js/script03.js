@@ -6,6 +6,17 @@ function moltiplica(num1,num2){
 
 }
 
+function dividi(num1,num2){
+    let risulato=num1/num2;
+    return risultato;
+}
+
+//queste 2 funzioni sono separate e non si vedono mai.
+function sottrai(num1,num2){
+    let risulato = num1-num2
+}
+
+
 
 function calcola(){
 
@@ -40,12 +51,15 @@ function calcola(){
     let num1=documet.getElementById("num1").value;
     let num2=documet.getElementById("num1").value;
 
-    demo.innerHTML="La moltiplicazione vale : "+ moltiplica(num1,num2)+"<br>"
+    demo.innerHTML ="La moltiplicazione vale : "+ moltiplica(num1,num2)+"<br>"
 demo.innerHTML +="La somma vale" + somma(num1,num2)
+demo.innerHTML +="La sottrazione vale: "+ sottrai(num1,num2)
+demo.innerHTML +="La divisione vale: " +dividi(num1,num2).toPrecision(3)+"<br>";
 
 }
 
 
-
+//in questo caso la funzione non ha le parentesi tonde 
+//se ci fossero le parentesi tonde il programma partirebbe subito
 
 btn.addEventListener("click",calcola)

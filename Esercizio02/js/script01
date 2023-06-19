@@ -1,0 +1,21 @@
+
+
+
+//dichiaro una variabile per estrarre i numeri
+
+
+
+function estrai() {
+    let numeroCasuale = Math.floor(Math.random() * 90) + 1;
+    return numeroCasuale;
+  }
+  
+
+
+  document.getElementById("estraiNumero").onclick = function() {
+    let numeroGenerato = estrai();
+    document.getElementById("numeroCasuale").textContent = "Numero casuale: " + numeroGenerato;
+  };
+
+
+
