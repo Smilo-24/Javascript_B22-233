@@ -1,21 +1,136 @@
-
-
-
 //dichiaro una variabile per estrarre i numeri
 
 
 
+// function estrai() {
+//   let numeroCasuale = Math.floor(Math.random() * 90) + 1;
+//   return numeroCasuale;
+// }
+
+
+
+// document.getElementById("estraiNumero").onclick = function () {
+//   let numeroGenerato = estrai();
+//   document.getElementById("numeroCasuale").textContent = "Numero casuale: " + numeroGenerato;
+// };
+
+
+
+//Correzione di DARIO
+
+
+
+
+
 function estrai() {
-    let numeroCasuale = Math.floor(Math.random() * 90) + 1;
-    return numeroCasuale;
+  let numGiri = 0;
+  let numeriEstratti = [];
+
+  let numeriDaEstrarre = document.getElementById("numeriDaEstrarre").value;
+
+  //controllo se questo numero ha un indice nell array
+  if (numeriDaEstrarre < 0 || numeriDaEstrarre > 10) {
+    demo.innerHTML = "metti un valore da 1 a 10"
+
   }
-  
+
+  //if(numeriEstratti.indexOf(numero)==-1)
+
+  //inserisce i numeri e poi li toglie dal contatore
+  //se trova un doppione non lo inserisce
+  //numeriEstratti.push(numero)
+  else {
+    //Soluzione con il FOR
+    // for (i = 0; i < numeriDaEstrarre; i++) {
+    //   numGiri++;
+    //   var numero = Math.ceil(Math.random() * 90);
+    //   if (numeriEstratti.indexOf(numero) == -1) {
+    //     numeriEstratti.push(numero)
+    //   } else {
+    //     i--;
+    //   }
+    //   //per rieseguire un ciclo for i-- è l unico sistema
+    //   //rifatti il giro
+    // }
+    //Soluzione con il WHILE
+    while(numeriEstratti.length<=numeriDaEstrarre){
+
+      var numero= Math.ceil(Math.random()*90)
+      if(numeriEstratti.indexOf(numero)==-1){
+        numeriEstratti.push(numero);
+      }
+    }
+
+    //Soluzione con lo SPLICE
+    //Per usarlo mi servono 90 numeri. caricati con un for.
+
+    let numeri=[];
+
+    for(let i=0;i<90;i++){
+      numeri.push(i+1);
+    }
+
+    for (let i=0;i<numeriDaEstrarre;i++){
+      //Splice chiude l array ma estrae il numero che gli passo
+
+      var numero=Math.floor(Math.random()*num.length);
+      //a ogni giro lui mi toglie un numero
+      numeriEstratti.push(numeri[numero])
+      numeri.splice(numero,1)
+    }
 
 
-  document.getElementById("estraiNumero").onclick = function() {
-    let numeroGenerato = estrai();
-    document.getElementById("numeroCasuale").textContent = "Numero casuale: " + numeroGenerato;
-  };
+    // numeriEstratti.forEach(num => {
+    //   demo.innerHTML += num + ""
+    // });
+                                           
+  }
+
+  /**
+   * Questa funzione crea la singola riga di numeri
+   * @param{Array} numEstratti 
+   */
+function creaSerie(numEstratti){
+  //demo.innerHTML="<p>";
+  let serie="<p>"
+  numEstratti.forEach(num => {
+    //demo.innerHTML += num + "";
+    serie += num + "";
+  });
+  serie +="</p>"
+  return serie;
+//demo.innerHTML +="</p>"
+}
+
+
+  demo.innerHTML = numeriEstratti
+
+  console.log(numeriEstratti)
+  console.log(numGiri)
+}
+
+let demo = document.getElementById("demo")
+let btn = document.getElementById("btn")
+
+// btn.addEventListener("click", function(){
+//   estrai;
+// });
+btn.addEventListener("click",function(){
+let serie = document.getElementById("serie").value
+
+for(let i=0;i<serie;i++){
+  estrai();
+}
+});
 
 
 
+
+
+
+
+
+let colori = ["verde", "bianco", "giallo"]
+
+console.log(colori.indexOf("giallo")) // da come risultato 2
+console.log(colori.indexOf("piero")); //da come risultato -1, poiché non c'è nell'array
