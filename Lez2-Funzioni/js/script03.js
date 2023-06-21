@@ -63,3 +63,6 @@ demo.innerHTML +="La divisione vale: " +dividi(num1,num2).toPrecision(3)+"<br>";
 //se ci fossero le parentesi tonde il programma partirebbe subito
 
 btn.addEventListener("click",calcola)
+
+
+

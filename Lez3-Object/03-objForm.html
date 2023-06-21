@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+
+
+    <h1>Inserisci un nuovo Studente</h1>
+
+    <form action="" id="formReg">
+        <label for="nomeStud">Nome:</label>
+        <input type="text" placeholder="Piero pelu aiutami tu" id="nomeStud">
+        <br>
+        <label for="cognomeStud">Cognome:</label>
+        <input type="text" name="" id="cognomeStud">
+        <br>
+        <label for="matricolaStud">Matricola:</label>
+        <input type="number" id="matricolaStud">
+        <br>
+
+        <select name="" id="corso">
+            <!-- Valore pro forma -1 : quando vedo -1 ci sta qualcosa che non va  -->
+            <option value="-1" selected disabled>Seleziona un corso</option>
+            <option value="tecProg">Tecniche di Programmazione</option>
+            <option value="Java">Java</option>
+            <option value="Angular">Angular</option>
+            <option value="ingSoft">Ingegneria del software</option>
+        </select>
+        <br>
+        <button type="button" id="btn">Registra</button>
+    </form>
+
+    <ol id="demo"></ol>
+
+    <script src="./js/script05.js"></script>
+</body>
+
+</html>
