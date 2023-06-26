@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Dom</title>
+</head>
+<body>
+    
+
+    <h1>Query Selector</h1>
+
+    <h4>lista</h4>
+    <ul id="listaSpesa">
+        <li id="uno" class ="txtRed">Pane</li>
+        <li id="due" class ="txtRed">Acqua</li>
+        <li id="tre" class ="txtRed">Vino</li>
+        <li id="quattro" class ="txtRed">Nutella</li>
+        <li id="cinque" class ="txtRed">Pasta</li>
+    </ul>
+
+    <ul id="listaEcommerce"> 
+        <li id="uno" class ="txtRed">Mouse</li>
+        <li id="due" class ="txtRed">Tastiera</li>
+        <li id="tre" class ="txtRed">Pad</li>
+        <li id="quattro" class ="txtRed">Monitor</li>
+        <li id="cinque" class ="txtRed">Grappa</li>
+    </ul>
+
+    <script>
+
+        // querySelector("cssSelector")->restituisce 1 solo elemento
+        let uno = document.querySelector("#uno");
+        console.log(uno)
+
+        //passando una claasse mi restuisce la prima occorrenza 
+        // let el = document.querySelector(".txtRed")
+
+        let listaSpesa=document.querySelector("#listaSpesa")
+        console.log(listaSpesa);
+
+        // voglio prendere tutti gli li della pagina
+
+        let lis=document.querySelectorAll("li.txtRed")
+        console.log(li)
+
+
+        //ora voglio solo gli li della listaEcommerce
+        let lisEc=document.querySelectorAll("#ListaEommerce li.txtRed");
+        console.log(lisEc);
+
+        //voglio recuperare tutti gli li della lista della spesa
+        let listaSpesaAlt= document.querySelector("#listaSpesa");
+        let liListaSpesaAlt=document.children();
+
+        let primoFiglioEc=document.querySelector("listaEcommerce").firstElementChild.firstChild;
+        console.log(primoFiglioEc)
+
+
+        let listaEcommerce2=document.querySelector("#listaEcommerce").children;//ntutto produce una nodelist ->sono tutti array 
+
+        let ultimoFiglio=listaEcommerce[listaEcommerce2.length-1];
+        let primoFiglio=listaEcommerce2[0]
+        
+        console.log(primoFiglio)
+        console.log(ultimoFiglio)
+
+
+
+
+    </script>
+
+</body>
+</html>
