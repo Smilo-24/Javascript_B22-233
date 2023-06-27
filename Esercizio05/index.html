@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+
+    <!-- 
+    Mostra una lista di Pokemon (solo ed esclusivamente il nome) scelti da te, tra i tuoi preferiti. 
+    Al click sul nome mostra una card con titolo (nome Pokemon), immagine e descrizione del Pokemon.
+
+    Extra1: al click sull'immagine mostra un'altra foto dello stesso pokemon. 
+    Non preoccuparti della dimensione immagine, dovrebbero essere tutte della stessa misura.
+
+    Extra2: inserisci un pulsante "Chiudi" nella card per farla scomparire
+
+    -->
+
+    <div class="listaPokemon">
+        <div class="pokemon" onclick="mostraPokemon('Bulbasaur')">Bulbasaur
+        </div>
+        <div class="pokemon" onclick="mostraPokemon('Charmander')">Charmander</div>
+        <div class="pokemon" onclick="mostraPokemon('Squirtle')">Squirtle</div>
+    </div>
+
+
+<div class="pokemonCard" id="pokemonCard">
+        <span class="chiudiButton" onclick="hidePokemon()">Chiudi</span>
+        <h2 id="pokemon-title"></h2>
+        <img id="pokemon-image" src="" alt="">
+        <img id="pokemon-image2" src="" alt="">
+        <p id="pokemon-description"></p>
+    </div>
+
+
+
+<script src="./js/script01.js"></script>
+</body>
+
+</html>

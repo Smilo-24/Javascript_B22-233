@@ -1,5 +1,30 @@
-.dimStrobo{
+.dimStrobo {
     width: 300px;
     height: 200px;
-    border:2px;
-}
+    border: 2px solid green;
+    border-radius: 50%;
+  }
+  /* Dichiaro i colori che ad ogni click vanno a riempire il mio cerchio */
+  .rosso {
+    background-color: red;
+  }
+
+  .verde {
+    background-color: green;
+  }
+
+  .blu {
+    background-color: blue;
+  }
+
+  .giallo {
+    background-color: yellow;
+  }
+
+  .arancione {
+    background-color: orange;
+  }
+
+  .viola {
+    background-color: purple;
+  }
