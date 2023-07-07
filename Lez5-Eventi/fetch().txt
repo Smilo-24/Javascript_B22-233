@@ -1,0 +1,110 @@
+Spesso potresti volere che il tuo sistema comunichi con altri web server per ottenere informazioni.
+
+Ad esempio, supponiamo che un nuovo utente desideri creare un account sul tuo sito web. E per registrarsi invece di voler compilare manualmente un modulo per inviare le sue informazioni al tuo sistema, voglia utilizzare informazioni che sono già in un altro servizio o piattaforma (ovvero, l'autenticazione di terze parti ).
+
+In tal caso, il tuo sistema deve comunicare con il sistema di terze parti per ottenere le informazioni di quell'utente. E lo fa attraverso un'API .
+
+Un'API, o Application Programming Interface, è solo un insieme di regole che guidano il modo in cui un software o un sistema comunica con un altro.
+
+Se la tua applicazione è un'applicazione a pagina singola creata con un linguaggio di programmazione asincrono come JavaScript, hai uno strumento utile per svolgere tale funzione: fetch().
+
+Che cos'è l'API Fetch?
+fetch() è un meccanismo che ti consente di effettuare semplici chiamate AJAX (JavaScript asincrono e XML) con JavaScript.
+
+Asincrono significa che puoi usare fetch per effettuare una chiamata a un'API esterna senza interrompere l'esecuzione di altre istruzioni. In questo modo, le altre funzioni del sito continueranno a essere eseguite anche quando una chiamata API non è stata risolta.
+
+Quando una risposta (dati) viene restituita dall'API, le attività asincrone (fetch) riprendono. Se sembra ancora difficile, puoi leggere la mia introduzione dettagliata al codice asincrono qui .
+
+È importante notare, tuttavia, che il fetch non fa parte delle specifiche JavaScript, ma del WWTAG. Di conseguenza, non sarai in grado di usarlo in un ambiente Node.js (a meno che tu non installi un modulo speciale).
+
+Come utilizzare fetch() in JavaScript
+Quando parliamo di API, dobbiamo anche parlare di endpoint . Un endpoint è semplicemente un URL univoco che chiami per interagire con un altro sistema.
+
+Supponiamo di fare una richiesta a un'API esterna per ottenere alcuni dati (come li post di un blog). Per questo, utilizzeremo una semplice richiesta GET.
+
+Chiama semplicemente fetch() con l'URL dell'endpoint come argomento:
+
+fetch('https://ubahthebuilder.tech/posts/1');
+Tentativo di recuperare il post del blog da un'API esterna
+Il corpo della risposta per questo endpoint sarà costituito da informazioni su un post del blog:
+
+{
+userId: 1,
+id: 1,
+title: 'A post by Kingsley',
+body: 'Brilliant post on fetch...',
+};
+Alla fine, vorrai ottenere il corpo della risposta. Ma l'oggetto in risposta contiene un bel po' di informazioni oltre il corpo, incluso il codice di stato, le intestazioni e altre informazioni.
+
+Nota che l'API di recupero restituisce una promessa. Per questo motivo, è necessario annidare un metodo then() per gestire la risoluzione. Scopri di più sulle promesse qui .
+I dati restituiti dall'API non sono generalmente in una forma utilizzabile. Quindi dovrai convertire i dati in una forma con il quale il tuo JavaScript può operare. Per fortuna, puoi usare il metodo json() per fare proprio questo:
+
+fetch('https://ubahthebuilder.tech/posts/1')
+.then(data => {
+return data.json();
+})
+.then(post => {
+console.log(post.title);
+});
+Recupero del post del blog dall'API ed estrazione solo della proprietà del titolo
+Come puoi vedere nel codice sopra, puoi annidare un successivo metodo then() per analizzare i dati (nel nostro caso ho estratto solo il titolo)
+
+In questo esempio, volevamo semplicemente ottenere un post del blog tramite l'API. E se invece volessimo pubblicare una storia?
+
+Come fare una richiesta POST
+Una volta che vai oltre le richieste GET, dovrai impostare alcune opzioni in più. Finora, hai fornito solo un singolo argomento a fetch() e cioè l'URL endpoint .
+
+Per una richiesta di tipo post, dovrai passare un oggetto contenente le opzioni di configurazione come secondo argomento. L'oggetto opzionale può richiedere molti parametri diversi. In questo caso, includi solo le informazioni più necessarie.
+
+Poiché stai inviando una richiesta POST, dovrai dichiarare che stai utilizzando il metodo POST.
+
+Dovrai anche passare alcuni dati per creare effettivamente il nuovo post nel blog. Poiché stai inviando dati JSON, dovrai impostare un'intestazione di Content-Type settata su application/json . Infine, avrai bisogno del corpo, che sarà una singola stringa di dati JSON.
+
+const update = {
+title: 'A blog post by Kingsley',
+body: 'Brilliant post on fetch API',
+userId: 1,
+};
+
+const options = {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify(update),
+};
+E poi, la chiamata API:
+
+fetch('https://jsonplaceholder.typicode.com/posts', options)
+  .then(data => {
+      if (!data.ok) {
+        throw Error(data.status);
+       }
+       return data.json();
+      }).then(update => {
+      console.log(update);
+      // {
+      //
+      title: 'A blog post by Kingsley',
+      //
+      body: 'Brilliant post on fetch API',
+      //
+      userId: 1,
+      //
+      id: 101
+      // };
+      }).catch(e => {
+      console.log(e);
+      });
+Se la tua richiesta ha esito positivo, riceverai un corpo di risposta contenente l'oggetto del post nel blog insieme a un nuovo ID. La risposta varierà a seconda di come è impostata l'API.
+
+Infine, dovresti considerare che gli endpoint potrebbero cambiare nel tempo e le API potrebbero essere ristrutturate. Quindi dovresti mettere insieme tutte le tue chiamate di recupero per un accesso più facile.
+
+Conclusione
+Ecco alcuni punti per riassumere questo articolo:
+
+I sistemi informatici come il software comunicano tra loro e condividono le informazioni attraverso uno strato chiamato API.
+Un'API contiene l'insieme di norme e protocolli che regolano il modo in cui due o più sistemi interagiscono. Ad esempio, il sistema Facebook può interagire con il sistema Google per ottenere informazioni su un utente tramite un'API.
+Nel front-end in JavaScript , puoi effettuare semplici chiamate API con l'utilità fetch().
+Per effettuare una semplice richiesta GET con fetch, devi solo passare l'URL endpoint come argomento.
+Per effettuare una richiesta POST, dovrai passare alcuni altri parametri incluso un oggetto di configurazione.
