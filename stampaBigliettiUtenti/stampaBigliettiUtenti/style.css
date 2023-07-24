@@ -1,0 +1,40 @@
+.border{
+   /* border: 4px solid; uso le classi di bootstrap */ 
+    margin: 2rem;
+    padding: 1rem;
+    width: 20%;
+}
+
+.card {
+    margin: 2rem;
+    width: 300px; /* larghezza della card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sfumatura */
+    max-width: 400px;  
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    
+      
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
